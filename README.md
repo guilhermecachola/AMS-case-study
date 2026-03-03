@@ -21,3 +21,4 @@ Python — PyTest + pytest-bdd
 
 ## How to Run Tests
 
+Without tests
