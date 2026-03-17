@@ -1,0 +1,27 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor "Contributor" as C
+actor "Data Steward" as DS
+
+rectangle "AMS Data Integrity Engine" {
+  usecase "UC-01: Submeter Respostas de Intake" as UC1
+  usecase "UC-02: Fazer Upload de Evidências" as UC2
+  usecase "UC-03: Validar Regras Cross-Field" as UC3
+  usecase "UC-04: Marcar Estado como Inválido" as UC4
+  usecase "UC-05: Revisar Inconsistências" as UC5
+  usecase "UC-06: Gerar Relatório de Erros" as UC6
+}
+
+C --> UC1
+C --> UC2
+
+UC1 ..> UC3 : <<include>>
+UC2 ..> UC3 : <<include>>
+UC3 <.. UC4 : <<extend>> : (se falhar regra REQ-003/004/005)
+
+DS --> UC4
+DS --> UC5
+DS --> UC6
+@enduml
