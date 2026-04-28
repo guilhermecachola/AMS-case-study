@@ -1,48 +1,20 @@
 # Vibe Coding Log — Lab 8
 
 ## Tool used
-- **Tool:** Lovable / Cursor (Select yours)
+- **Tool:** L Cursor 
 - **Environment/stack:** React + Tailwind CSS (Vite)
 
-## Iteration 1
-**Prompt (summary):**
-"Cria uma página simples de submissão de projeto em React. O formulário deve ter: Nome, Orçamento, Nível de Risco (Low/High) e um campo de upload de ficheiro. Implementa a regra: se o Risco for 'High', o upload é obrigatório. Se o Orçamento > 100k, mostra um campo de Justificação. O ficheiro deve mostrar automaticamente a data de hoje e o nome do 'Owner' (simulado como 'Current User')."
+Iteration 1 Prompt: "Gera um App.tsx em React que implemente um formulário de Intake. Usa Tailwind para o estilo. Preciso de campos para Nome, Budget, Risco e Upload de ficheiros. Se o Budget for > 100k, exige justificação. Se o Risco for High, o upload é obrigatório."
 
-**Generated output:**
-- Formulário funcional com validação básica de campos vazios.
-- Lógica condicional para mostrar o campo de justificação.
-- Componente de upload que lista o nome do ficheiro.
+Iteration 2 Prompt (Refining Metadata): "Melhora a parte dos ficheiros. Cada vez que um ficheiro é carregado, o sistema deve guardar automaticamente o 'Owner' como 'Admin' e a data atual num objeto de metadados. Mostra esses metadados na lista de ficheiros por baixo do upload."
 
-**Kept (accepted):**
-- Lógica de visibilidade condicional da Justificação.
-- Captura automática de metadados (Data).
+Manual Verification:
 
-**Rejected (feature drift):**
-- A ferramenta tentou criar uma barra lateral de navegação e um gráfico de estatísticas. Removido por estar fora da Slice B.
+Happy Path: Preenchi Nome, Budget de 50k, Risco Low. O botão "Submit" ficou ativo e o ID INTAKE-xxx foi gerado. (Sucesso)
 
-**Manual verification:**
-- **Happy path:** Submissão com Risco Low e sem ficheiro -> Sucesso.
-- **Alternative flow:** Risco High com ficheiro -> Sucesso.
-- **Exception/error path:** Risco High sem ficheiro -> Erro "Evidence required for High Risk".
+Alternative Flow: Subi o Budget para 150k. O campo de Justificação apareceu imediatamente. (Sucesso)
 
----
-
-## Iteration 2
-**Prompt (summary):**
-"Refina a validação. O campo de Justificação (quando o orçamento > 100k) deve ter no mínimo 20 caracteres. Melhora o feedback visual: se a validação falhar, o estado do formulário deve mudar visualmente para 'Invalid' (borda vermelha) e mostrar o log do erro de acordo com o REQ-007."
-
-**Generated output:**
-- Validação de comprimento de string na justificação.
-- Banner de erro vermelho com a lista de regras violadas.
-
-**Kept:**
-- Banner de erros detalhado.
-- Bloqueio do botão de submissão enquanto as regras de variante não forem cumpridas.
-
-**Manual verification:**
-- **Happy path:** Orçamento > 100k com justificação longa -> Válido.
-- **Alternative flow:** Alterar orçamento para < 100k -> Justificação desaparece e estado passa a Válido.
-- **Exception/error path:** Justificação com apenas 5 caracteres -> Erro de validação visível.
+Exception Path: Mudei o Risco para High sem carregar ficheiro. O estado mudou para "Invalid" e o botão de submissão foi desativado. (Sucesso)
 
 ---
 
