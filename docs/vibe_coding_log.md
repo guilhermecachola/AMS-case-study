@@ -10,15 +10,14 @@ Iteration 2 Prompt (Refining Metadata): "Melhora a parte dos ficheiros. Cada vez
 
 Manual Verification:
 
-Happy Path: Preenchi Nome, Budget de 50k, Risco Low. O botão "Submit" ficou ativo e o ID INTAKE-xxx foi gerado. (Sucesso)
+Happy Path: Preenchi Nome, Budget de 50k, Risco Low. O botão "Submit" ficou ativo e o ID INTAKE-xxx foi gerado. 
 
-Alternative Flow: Subi o Budget para 150k. O campo de Justificação apareceu imediatamente. (Sucesso)
+Alternative Flow: Subi o Budget para 150k. O campo de Justificação apareceu imediatamente.  
+**REVER**
 
-Exception Path: Mudei o Risco para High sem carregar ficheiro. O estado mudou para "Invalid" e o botão de submissão foi desativado. (Sucesso)
-
+Exception Path: Mudei o Risco para High sem carregar ficheiro. O estado mudou para "Invalid" e o botão de submissão foi desativado. 
 ---
 
-## Notes (lessons learned)
+## Notes
 - **Ambiguidade:** A IA inicialmente não entendeu que o "Owner" devia ser automático e criou um campo de texto. Foi necessário clarificar na Iteração 2.
-- **Restrições:** Definir o REQ-007 (Invalid State) ajudou a IA a criar uma estrutura de "Error Log" mais organizada em vez de apenas alertas genéricos.
-- **Mudança para o futuro:** Os critérios de aceitação precisam de ser mais específicos quanto ao formato dos metadados dos ficheiros (ex: timestamp exato).
+- **Restrições:** Definir o REQ-007 (Inválido) ajudou a IA a criar uma estrutura de "Error Log" mais organizada em vez de apenas alertas genéricos.
