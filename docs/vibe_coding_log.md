@@ -4,9 +4,11 @@
 - **Tool:**  Cursor 
 - **Environment/stack:** React + Tailwind CSS (Vite)
 
+Em todas as prompts anexei os documentos de acceptance criteria e REQ
+
 Iteration 1 Prompt: "Gera um App.tsx em React que implemente um formulário de Intake. Usa Tailwind para o estilo. Preciso de campos para Nome, Budget, Risco e Upload de ficheiros. Se o Budget for > 100k, exige justificação. Se o Risco for High, o upload é obrigatório."
 
-Iteration 2 Prompt (Refining Metadata): "Melhora a parte dos ficheiros. Cada vez que um ficheiro é carregado, o sistema deve guardar automaticamente o 'Owner' como 'Admin' e a data atual num objeto de metadados. Mostra esses metadados na lista de ficheiros por baixo do upload."
+Iteration 2 Prompt: "Melhora a parte dos ficheiros. Cada vez que um ficheiro é carregado, o sistema deve guardar automaticamente o 'Owner' como 'Admin' e a data atual num objeto de metadados. Mostra esses metadados na lista de ficheiros por baixo do upload."
 
 Manual Verification:
 
