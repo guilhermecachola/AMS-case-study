@@ -1,0 +1,23 @@
+.DS_Store
+
+# Dependencies
+node_modules/
+bdd/node_modules/
+
+# Build outputs
+dist/
+bdd/dist/
+
+# Tool caches
+.vite/
+bdd/.vite/
+coverage/
+bdd/coverage/
+
+# TypeScript incremental builds
+*.tsbuildinfo
+
+# Environment files
+.env
+.env.*
+!.env.example
